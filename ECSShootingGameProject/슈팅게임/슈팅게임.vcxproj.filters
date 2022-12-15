@@ -1,0 +1,123 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="4.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <ItemGroup>
+    <Filter Include="소스 파일">
+      <UniqueIdentifier>{4FC737F1-C7A5-4376-A066-2A32D752A2FF}</UniqueIdentifier>
+      <Extensions>cpp;c;cc;cxx;c++;cppm;ixx;def;odl;idl;hpj;bat;asm;asmx</Extensions>
+    </Filter>
+    <Filter Include="헤더 파일">
+      <UniqueIdentifier>{93995380-89BD-4b04-88EB-625FBE52EBFB}</UniqueIdentifier>
+      <Extensions>h;hh;hpp;hxx;h++;hm;inl;inc;ipp;xsd</Extensions>
+    </Filter>
+    <Filter Include="리소스 파일">
+      <UniqueIdentifier>{67DA6AB6-F800-4c08-8B7A-83BB121AAD01}</UniqueIdentifier>
+      <Extensions>rc;ico;cur;bmp;dlg;rc2;rct;bin;rgs;gif;jpg;jpeg;jpe;resx;tiff;tif;png;wav;mfcribbon-ms</Extensions>
+    </Filter>
+    <Filter Include="헤더 파일\1. Component">
+      <UniqueIdentifier>{bce318cb-6356-48cb-9580-3fd9b2446d4f}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="헤더 파일\2. Entity">
+      <UniqueIdentifier>{a3151bc9-96a8-4cd3-b275-9e14ff5f1081}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="소스 파일\1. Component">
+      <UniqueIdentifier>{6c45776e-cfc5-4295-89a4-aa32b1b7a446}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="소스 파일\2. Entity">
+      <UniqueIdentifier>{c717162b-35df-4cf0-ae16-cdb78cb30a33}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="헤더 파일\3. System">
+      <UniqueIdentifier>{573771a5-b0bd-47d7-8eed-23acefa9da7c}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="소스 파일\3. System">
+      <UniqueIdentifier>{4c293cf2-472d-4df1-a43e-f50a76fda2a3}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="헤더 파일\4. Scene">
+      <UniqueIdentifier>{7a754f94-5391-4cf9-b815-d2f1c20773b3}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="소스 파일\4. Scene">
+      <UniqueIdentifier>{3322168d-0c19-4754-b3ff-bfa300fe11e0}</UniqueIdentifier>
+    </Filter>
+  </ItemGroup>
+  <ItemGroup>
+    <ClCompile Include="main.cpp">
+      <Filter>소스 파일</Filter>
+    </ClCompile>
+    <ClCompile Include="ECS.cpp">
+      <Filter>소스 파일</Filter>
+    </ClCompile>
+    <ClCompile Include="Component.cpp">
+      <Filter>소스 파일\1. Component</Filter>
+    </ClCompile>
+    <ClCompile Include="ComponentPool.cpp">
+      <Filter>소스 파일\1. Component</Filter>
+    </ClCompile>
+    <ClCompile Include="TransformComponent.cpp">
+      <Filter>소스 파일\1. Component</Filter>
+    </ClCompile>
+    <ClCompile Include="Entity.cpp">
+      <Filter>소스 파일\2. Entity</Filter>
+    </ClCompile>
+    <ClCompile Include="InputSystem.cpp">
+      <Filter>소스 파일\3. System</Filter>
+    </ClCompile>
+    <ClCompile Include="System.cpp">
+      <Filter>소스 파일\3. System</Filter>
+    </ClCompile>
+    <ClCompile Include="EnemyMovementSystem.cpp">
+      <Filter>소스 파일\3. System</Filter>
+    </ClCompile>
+    <ClCompile Include="BulletMovementSystem.cpp">
+      <Filter>소스 파일\3. System</Filter>
+    </ClCompile>
+    <ClCompile Include="EnemyDrawSystem.cpp">
+      <Filter>소스 파일\3. System</Filter>
+    </ClCompile>
+    <ClCompile Include="PlayerBulletDrawSystem.cpp">
+      <Filter>소스 파일\3. System</Filter>
+    </ClCompile>
+    <ClCompile Include="ColliderSystem.cpp">
+      <Filter>소스 파일\3. System</Filter>
+    </ClCompile>
+  </ItemGroup>
+  <ItemGroup>
+    <ClInclude Include="Flag.h">
+      <Filter>헤더 파일</Filter>
+    </ClInclude>
+    <ClInclude Include="ECS.h">
+      <Filter>헤더 파일</Filter>
+    </ClInclude>
+    <ClInclude Include="Component.h">
+      <Filter>헤더 파일\1. Component</Filter>
+    </ClInclude>
+    <ClInclude Include="ComponentPool.h">
+      <Filter>헤더 파일\1. Component</Filter>
+    </ClInclude>
+    <ClInclude Include="TransformComponent.h">
+      <Filter>헤더 파일\1. Component</Filter>
+    </ClInclude>
+    <ClInclude Include="InputSystem.h">
+      <Filter>헤더 파일\3. System</Filter>
+    </ClInclude>
+    <ClInclude Include="Entity.h">
+      <Filter>헤더 파일\2. Entity</Filter>
+    </ClInclude>
+    <ClInclude Include="System.h">
+      <Filter>헤더 파일\3. System</Filter>
+    </ClInclude>
+    <ClInclude Include="EnemyMovementSystem.h">
+      <Filter>헤더 파일\3. System</Filter>
+    </ClInclude>
+    <ClInclude Include="BulletMovementSystem.h">
+      <Filter>헤더 파일\3. System</Filter>
+    </ClInclude>
+    <ClInclude Include="EnemyDrawSystem.h">
+      <Filter>헤더 파일\3. System</Filter>
+    </ClInclude>
+    <ClInclude Include="PlayerBulletDrawSystem.h">
+      <Filter>헤더 파일\3. System</Filter>
+    </ClInclude>
+    <ClInclude Include="ColliderSystem.h">
+      <Filter>헤더 파일\3. System</Filter>
+    </ClInclude>
+  </ItemGroup>
+</Project>

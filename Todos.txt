@@ -1,0 +1,2 @@
+Bullet Entity 생성 및 해제 방식으로 바꾸기
+-> InputSystem 에서 매번 새로운 총알 쏠 수 있게 하기 

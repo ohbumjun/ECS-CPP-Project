@@ -1,0 +1,137 @@
+﻿  BulletMovementSystem.cpp
+  ColliderSystem.cpp
+  ECS.cpp
+D:\DirectXPersonalProjectFolder\ECSProject\ECSShootingGameProject\슈팅게임\ECS.h(111,1): error C2440: 'return': '_Ty'에서 'T *'(으)로 변환할 수 없습니다.
+          with
+          [
+              _Ty=std::unique_ptr<System,std::default_delete<System>>
+          ]
+          and
+          [
+              T=InputSystem
+          ]
+D:\DirectXPersonalProjectFolder\ECSProject\ECSShootingGameProject\슈팅게임\ECS.h(111,42): message : 이 변환을 수행할 수 있는 사용 가능한 사용자 정의 변환 연산자가 없거나 연산자를 호출할 수 없습니다.
+D:\DirectXPersonalProjectFolder\ECSProject\ECSShootingGameProject\슈팅게임\ECS.cpp(26): message : 컴파일되는 함수 템플릿 인스턴스화 'T *ECS::AddSystem<InputSystem>(void)'에 대한 참조를 확인하세요.
+          with
+          [
+              T=InputSystem
+          ]
+D:\DirectXPersonalProjectFolder\ECSProject\ECSShootingGameProject\슈팅게임\ECS.h(111,1): error C2440: 'return': '_Ty'에서 'T *'(으)로 변환할 수 없습니다.
+          with
+          [
+              _Ty=std::unique_ptr<System,std::default_delete<System>>
+          ]
+          and
+          [
+              T=EnemyMovementSystem
+          ]
+D:\DirectXPersonalProjectFolder\ECSProject\ECSShootingGameProject\슈팅게임\ECS.h(111,42): message : 이 변환을 수행할 수 있는 사용 가능한 사용자 정의 변환 연산자가 없거나 연산자를 호출할 수 없습니다.
+D:\DirectXPersonalProjectFolder\ECSProject\ECSShootingGameProject\슈팅게임\ECS.cpp(27): message : 컴파일되는 함수 템플릿 인스턴스화 'T *ECS::AddSystem<EnemyMovementSystem>(void)'에 대한 참조를 확인하세요.
+          with
+          [
+              T=EnemyMovementSystem
+          ]
+D:\DirectXPersonalProjectFolder\ECSProject\ECSShootingGameProject\슈팅게임\ECS.h(111,1): error C2440: 'return': '_Ty'에서 'T *'(으)로 변환할 수 없습니다.
+          with
+          [
+              _Ty=std::unique_ptr<System,std::default_delete<System>>
+          ]
+          and
+          [
+              T=BulletMovementSystem
+          ]
+D:\DirectXPersonalProjectFolder\ECSProject\ECSShootingGameProject\슈팅게임\ECS.h(111,42): message : 이 변환을 수행할 수 있는 사용 가능한 사용자 정의 변환 연산자가 없거나 연산자를 호출할 수 없습니다.
+D:\DirectXPersonalProjectFolder\ECSProject\ECSShootingGameProject\슈팅게임\ECS.cpp(28): message : 컴파일되는 함수 템플릿 인스턴스화 'T *ECS::AddSystem<BulletMovementSystem>(void)'에 대한 참조를 확인하세요.
+          with
+          [
+              T=BulletMovementSystem
+          ]
+D:\DirectXPersonalProjectFolder\ECSProject\ECSShootingGameProject\슈팅게임\ECS.h(111,1): error C2440: 'return': '_Ty'에서 'T *'(으)로 변환할 수 없습니다.
+          with
+          [
+              _Ty=std::unique_ptr<System,std::default_delete<System>>
+          ]
+          and
+          [
+              T=EnemyDrawSystem
+          ]
+D:\DirectXPersonalProjectFolder\ECSProject\ECSShootingGameProject\슈팅게임\ECS.h(111,42): message : 이 변환을 수행할 수 있는 사용 가능한 사용자 정의 변환 연산자가 없거나 연산자를 호출할 수 없습니다.
+D:\DirectXPersonalProjectFolder\ECSProject\ECSShootingGameProject\슈팅게임\ECS.cpp(29): message : 컴파일되는 함수 템플릿 인스턴스화 'T *ECS::AddSystem<EnemyDrawSystem>(void)'에 대한 참조를 확인하세요.
+          with
+          [
+              T=EnemyDrawSystem
+          ]
+D:\DirectXPersonalProjectFolder\ECSProject\ECSShootingGameProject\슈팅게임\ECS.h(111,1): error C2440: 'return': '_Ty'에서 'T *'(으)로 변환할 수 없습니다.
+          with
+          [
+              _Ty=std::unique_ptr<System,std::default_delete<System>>
+          ]
+          and
+          [
+              T=PlayerBulletDrawSystem
+          ]
+D:\DirectXPersonalProjectFolder\ECSProject\ECSShootingGameProject\슈팅게임\ECS.h(111,42): message : 이 변환을 수행할 수 있는 사용 가능한 사용자 정의 변환 연산자가 없거나 연산자를 호출할 수 없습니다.
+D:\DirectXPersonalProjectFolder\ECSProject\ECSShootingGameProject\슈팅게임\ECS.cpp(30): message : 컴파일되는 함수 템플릿 인스턴스화 'T *ECS::AddSystem<PlayerBulletDrawSystem>(void)'에 대한 참조를 확인하세요.
+          with
+          [
+              T=PlayerBulletDrawSystem
+          ]
+D:\DirectXPersonalProjectFolder\ECSProject\ECSShootingGameProject\슈팅게임\ECS.h(111,1): error C2440: 'return': '_Ty'에서 'T *'(으)로 변환할 수 없습니다.
+          with
+          [
+              _Ty=std::unique_ptr<System,std::default_delete<System>>
+          ]
+          and
+          [
+              T=ColliderSystem
+          ]
+D:\DirectXPersonalProjectFolder\ECSProject\ECSShootingGameProject\슈팅게임\ECS.h(111,42): message : 이 변환을 수행할 수 있는 사용 가능한 사용자 정의 변환 연산자가 없거나 연산자를 호출할 수 없습니다.
+D:\DirectXPersonalProjectFolder\ECSProject\ECSShootingGameProject\슈팅게임\ECS.cpp(31): message : 컴파일되는 함수 템플릿 인스턴스화 'T *ECS::AddSystem<ColliderSystem>(void)'에 대한 참조를 확인하세요.
+          with
+          [
+              T=ColliderSystem
+          ]
+D:\DirectXPersonalProjectFolder\ECSProject\ECSShootingGameProject\슈팅게임\ECS.h(62,32): warning C4018: '<=': signed 또는 unsigned가 일치하지 않습니다.
+D:\DirectXPersonalProjectFolder\ECSProject\ECSShootingGameProject\슈팅게임\ECS.cpp(36): message : 컴파일되는 함수 템플릿 인스턴스화 'T *ECS::AddComponent<TransformComponent,int,int>(EntityID,int &&,int &&)'에 대한 참조를 확인하세요.
+          with
+          [
+              T=TransformComponent
+          ]
+D:\DirectXPersonalProjectFolder\ECSProject\ECSShootingGameProject\슈팅게임\ECS.h(64,21): error C2664: 'void std::vector<ComponentPool,std::allocator<ComponentPool>>::resize(const unsigned int,const _Ty &)': 인수 2을(를) 'nullptr'에서 'const _Ty &'(으)로 변환할 수 없습니다.
+          with
+          [
+              _Ty=ComponentPool
+          ]
+D:\DirectXPersonalProjectFolder\ECSProject\ECSShootingGameProject\슈팅게임\ECS.h(56,1): message : 원인: 'nullptr'에서 'const _Ty'(으)로 변환할 수 없습니다.
+          with
+          [
+              _Ty=ComponentPool
+          ]
+D:\DirectXPersonalProjectFolder\ECSProject\ECSShootingGameProject\슈팅게임\ECS.h(56,1): message : 소스 형식을 가져올 수 있는 생성자가 없거나 생성자 오버로드 확인이 모호합니다.
+C:\Program Files (x86)\Microsoft Visual Studio\2019\Community\VC\Tools\MSVC\14.29.30133\include\vector(1280,33): message : 'std::vector<ComponentPool,std::allocator<ComponentPool>>::resize' 선언을 참조하십시오.
+D:\DirectXPersonalProjectFolder\ECSProject\ECSShootingGameProject\슈팅게임\ECS.h(68,38): error C2676: 이항 '==': '_Ty'이(가) 이 연산자를 정의하지 않거나 미리 정의된 연산자에 허용되는 형식으로의 변환을 정의하지 않습니다.
+          with
+          [
+              _Ty=ComponentPool
+          ]
+D:\DirectXPersonalProjectFolder\ECSProject\ECSShootingGameProject\슈팅게임\ECS.h(70,33): error C2679: 이항 '=': 오른쪽 피연산자로 'ComponentPool *' 형식을 사용하는 연산자가 없거나 허용되는 변환이 없습니다.
+D:\DirectXPersonalProjectFolder\ECSProject\ECSShootingGameProject\슈팅게임\ComponentPool.h(30,1): message : 'ComponentPool &ComponentPool::operator =(const ComponentPool &)'일 수 있습니다.
+D:\DirectXPersonalProjectFolder\ECSProject\ECSShootingGameProject\슈팅게임\ECS.h(56,1): message : 인수 목록 '(_Ty, ComponentPool *)'을(를) 일치시키는 동안
+          with
+          [
+              _Ty=ComponentPool
+          ]
+D:\DirectXPersonalProjectFolder\ECSProject\ECSShootingGameProject\슈팅게임\ECS.h(56,1): error C2446: '==': 'nullptr'에서 '_Ty'(으)로 변환되지 않았습니다.
+          with
+          [
+              _Ty=ComponentPool
+          ]
+D:\DirectXPersonalProjectFolder\ECSProject\ECSShootingGameProject\슈팅게임\ECS.h(56,1): message : 소스 형식을 가져올 수 있는 생성자가 없거나 생성자 오버로드 확인이 모호합니다.
+  EnemyDrawSystem.cpp
+  InputSystem.cpp
+  main.cpp
+D:\DirectXPersonalProjectFolder\ECSProject\ECSShootingGameProject\슈팅게임\main.cpp(16,12): warning C4244: '인수': 'time_t'에서 'unsigned int'(으)로 변환하면서 데이터가 손실될 수 있습니다.
+  EnemyMovementSystem.cpp
+  PlayerBulletDrawSystem.cpp
+  TransformComponent.cpp
+  코드를 생성하고 있습니다...
