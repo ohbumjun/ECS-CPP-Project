@@ -64,9 +64,10 @@ void InputSystem::updateComponents(float delta)
 		case 32: //스페이바 누르면 총알 발사
 			TransformComponent* PlayerTransformComp = m_ECS->GetEntityComponent<TransformComponent>(m_PlayerEntityID);
 
-			EntityID BulletEntityID = m_ECS->CreateBulletEntity();
+ 			EntityID BulletEntityID = m_ECS->CreateBulletEntity();
 
 			TransformComponent* BulletTransform = m_ECS->GetEntityComponent<TransformComponent>(BulletEntityID);
+			 
 			BulletTransform->SetPosX(PlayerTransformComp->GetPosX() + 5);
 			BulletTransform->SetPosY(PlayerTransformComp->GetPosY());
 		}

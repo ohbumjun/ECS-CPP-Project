@@ -5,7 +5,8 @@
 void PlayerBulletDrawSystem::updateComponents(float delta)
 {
 	// Bullet
-	std::vector<std::vector<char>>& BG = m_ECS->GetBG();
+	// std::vector<std::vector<char>>& BG = m_ECS->GetBG();
+	char** BG = m_ECS->GetBG();
 
 	const std::list<EntityID>& BulletEntities = m_ECS->GetBulletEntities();
 

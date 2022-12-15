@@ -18,7 +18,7 @@ void BulletMovementSystem::updateComponents(float delta)
 		// 파괴하기
 		if (Transform->GetPosX() > 70)
 		{
-			m_ECS->DestroyEntity(*iter, EntityType::Bullet);
+  			m_ECS->DestroyEntity(*iter, EntityType::Bullet);
 
 			// listBulletEntities 목록에서 제거하기 
 			iter = listBulletEntities.erase(iter);

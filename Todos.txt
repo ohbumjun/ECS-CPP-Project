@@ -1,2 +1,3 @@
-Bullet Entity 생성 및 해제 방식으로 바꾸기
--> InputSystem 에서 매번 새로운 총알 쏠 수 있게 하기 
+1) 충돌 로직 작동 X ?
+2) 왜 100개나 있는 거임 ?
+-> Destroy 할 때 FreeEntity 목록에 넣어줘야 한다.

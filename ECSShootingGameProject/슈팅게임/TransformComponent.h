@@ -15,7 +15,7 @@ protected:
 public:
     inline void IncPosX(int x) { posX += x; }
     inline void IncPosY(int y) { posY += y; }
-    inline void SetPosX(int x) { posX = x; }
+     inline void SetPosX(int x) { posX = x; }
     inline void SetPosY(int y) { posY = y; }
     inline int GetPosX() { return posX; }
     inline int GetPosY() { return posY; }

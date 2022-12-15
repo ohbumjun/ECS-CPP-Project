@@ -9,11 +9,10 @@
 
 bool ECS::Init()
 {
-	// BG 작업
-	m_BG.resize(25);
+	m_BG = new char*[25];
 
 	for (int r = 0; r < 25; ++r)
-		m_BG[r].resize(80);
+		m_BG[r] = new char[79];
 
 	// 1. System 작업
 	/*
@@ -50,16 +49,17 @@ void ECS::Draw()
 	{
 		m_BG[i][79] = '\0';
 
-		for (int j = 0; j < 79; ++j)
-		{
-			std::cout << m_BG[i][j];
-		}
-		// std::cout << m_BG[i] << std::endl;
+		// for (int j = 0; j < 79; ++j)
+		// {
+		// 	std::cout << m_BG[i][j];
+		// }
+
+		std::cout << m_BG[i] << std::endl;
 		// printf("%s", bg[i]);
 	}
 }
 
-void ECS::Update(float Delta)
+void ECS::Update(int Tick)
 {
 	/*
 	const int InputSystemIdx = 0;
@@ -69,10 +69,20 @@ void ECS::Update(float Delta)
 	const int PlayerBulletDrawSystemIdx = 4;
 	*/
 
-	// Key Control
+	float Delta = 0.f;
+
+	// Key Control => 임의로 0.f
 	vecSystems[InputSystemIdx]->updateComponents(Delta);
 
 	// 일정 시간 마다 Enemy Entity 를 만들어낸다.
+	m_ThresHold += Tick;
+
+	if (m_ThresHold >= 10)
+	{
+		m_ThresHold = 0.f;
+		EntityID EnemyEntityID = CreateEnemyEntity();
+		TransformComponent* BulletTransform = AddComponent<TransformComponent, int>(EnemyEntityID, 77, rand() % 24); // x,y
+	}
 
 	// Movement Update
 	// 1. Enemy
@@ -118,18 +128,20 @@ EntityID ECS::CreateBulletEntity()
 {
 	if (!listBulletFreeEntities.empty())
 	{
-		EntityIndex newIdx = listBulletFreeEntities.back();
+ 		EntityIndex newIdx = listBulletFreeEntities.back();
 		listBulletFreeEntities.pop_back();
 		EntityID newID = CreateEntityId(newIdx, GetEntityVersion(vecEntities[newIdx]->id));
 		vecEntities[newIdx]->id = newID;
+		vecEntities[newIdx]->addComponent<TransformComponent>();
 		listBulletEntities.push_back(newID);
 		return vecEntities[newIdx]->id;
 	}
 
 	EntityID newID = CreateEntityId(EntityIndex(vecEntities.size()), 0);
 	Entity newEntity(newID, ComponentMask());
-	AddComponent<TransformComponent>(newID);
 	vecEntities.push_back(std::make_unique<Entity>(newEntity));
+	listBulletEntities.push_back(newID);
+	AddComponent<TransformComponent>(newID);
 	return vecEntities.back()->id;
 }
 
@@ -141,14 +153,16 @@ EntityID ECS::CreateEnemyEntity()
 		listEnemyFreeEntities.pop_back();
 		EntityID newID = CreateEntityId(newIdx, GetEntityVersion(vecEntities[newIdx]->id));
 		vecEntities[newIdx]->id = newID;
+		vecEntities[newIdx]->addComponent<TransformComponent>();
 		listEnemyEntities.push_back(newID);
 		return vecEntities[newIdx]->id;
 	}
 
 	EntityID newID = CreateEntityId(EntityIndex(vecEntities.size()), 0);
 	Entity newEntity(newID, ComponentMask());
-	AddComponent<TransformComponent>(newID);
 	vecEntities.push_back(std::make_unique<Entity>(newEntity));
+	listEnemyEntities.push_back(newID);
+	AddComponent<TransformComponent>(newID);
 	return vecEntities.back()->id;
 }
 
@@ -162,7 +176,7 @@ void ECS::DestroyEntity(EntityID id, EntityType Type)
 	vecEntities[Idx]->mask.reset();
 
 	if (Type == EntityType::Bullet)
-		listBulletFreeEntities.push_back(Idx);
+ 		listBulletFreeEntities.push_back(Idx);
 	else
 		listEnemyFreeEntities.push_back(Idx);
 }

@@ -14,18 +14,21 @@ const int EnemyMovementSystemIdx = 1;
 const int BulletMovementSystemIdx = 2;
 const int EnemyDrawSystemIdx = 3;
 const int PlayerBulletDrawSystemIdx = 4;
-const int ColliderSystemIdx = 4;
+const int ColliderSystemIdx = 5;
 
 class ECS
 {
 public:
 	ECS() = default;
-	~ECS() = default;
+	~ECS()
+	{
+		delete [] m_BG;
+	}
 
 	bool Init();
 
 	void Draw();
-	void Update(float Delta);
+	void Update(int Tick);
 	void Refresh();
 
 	/*
@@ -59,7 +62,7 @@ public:
 		EntityIndex idx = GetEntityIndex(id);
 
 		// Not Enough Component Pool
-		if (vecComponentPools.size() <= componentId)
+		if (vecComponentPools.size() <= (size_t)componentId)
 		{
 			vecComponentPools.resize(componentId + 1, nullptr);
 		}
@@ -70,10 +73,10 @@ public:
 			vecComponentPools[componentId] = new ComponentPool(sizeof(T));
 		}
 
-		T* comp = new (vecComponentPools[componentId].get(idx)) T(std::forward<TArgs>(args)...);
+		T* comp = new (vecComponentPools[componentId]->get(idx)) T(std::forward<TArgs>(args)...);
 
 		// set bit info
-		vecEntities[idx]->addComponent<T>(comp);
+		vecEntities[idx]->addComponent<T>();
 
 		return comp;
 	}
@@ -88,7 +91,7 @@ public:
 		if (!vecEntities[idx]->mask.test(componentId))
 			return nullptr;
 
-		T* pComponent = static_cast<T*>(vecComponentPools[componentId].get(idx));
+		T* pComponent = static_cast<T*>(vecComponentPools[componentId]->get(idx));
 
 		return pComponent;
 	}
@@ -108,7 +111,7 @@ public:
 
 		vecSystems.push_back(std::move(newSystem));
 
-		return vecSystems[vecSystems.size() - 1];
+		return (T*)vecSystems[vecSystems.size() - 1].get();
 	}
 
 	/*
@@ -124,7 +127,12 @@ public:
 		return m_Inst;
 	}
 
-	std::vector<std::vector<char>>& GetBG()
+	// std::vector<std::vector<char>>& GetBG()
+	// {
+	// 	return m_BG;
+	// }
+
+	char** GetBG()
 	{
 		return m_BG;
 	}
@@ -157,15 +165,16 @@ public:
 	}
 private:
 	// Player에 해당하는 Entity 는 0번째 idx 로 세팅할 것이다.
-	std::vector<ComponentPool> vecComponentPools;
+	std::vector<ComponentPool*> vecComponentPools;
 	std::list<EntityIndex> listBulletFreeEntities;
 	std::list<EntityIndex> listEnemyFreeEntities;
 	std::list<EntityID> listBulletEntities;
 	std::list<EntityID> listEnemyEntities;
 	std::vector<std::unique_ptr<Entity>> vecEntities;
 	std::vector<std::unique_ptr<System>> vecSystems;
-	std::vector<std::vector<char>> m_BG;
+	char ** m_BG;
 	static ECS* m_Inst;
 	std::atomic<int> m_SyncNum;
+	float m_ThresHold = 0.f;
 };
 

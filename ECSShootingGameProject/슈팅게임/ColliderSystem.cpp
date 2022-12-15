@@ -13,7 +13,7 @@ void ColliderSystem::updateComponents(float delta)
 	auto iterEnemy    = EnemyEntities.begin();
 	auto iterEnemyEnd = EnemyEntities.end();
 
-	for (; iterBullet != iterEnemyEnd;)
+	for (; iterBullet != iterBulletEnd;)
 	{
 		bool BulletErase = false;
 		TransformComponent* BulletTransform = m_ECS->GetEntityComponent<TransformComponent>(*iterBullet);
@@ -28,16 +28,21 @@ void ColliderSystem::updateComponents(float delta)
 					BulletTransform->GetPosX() <= EnemyTransform->GetPosX() + 1)
 				{
 					// Bullet 제거하기 
-					BulletErase = true;
+    					BulletErase = true;
+
+					m_ECS->DestroyEntity(*iterBullet, EntityType::Bullet);
+					m_ECS->DestroyEntity(*iterEnemy, EntityType::Enemy);
+
 					iterBullet = BulletEntities.erase(iterBullet);
+					iterEnemy  = EnemyEntities.erase(iterEnemy);
 					break;
 				}
 			}
-
-			if (BulletErase)
-				continue;
-
-			++iterBullet;
 		}
+
+		if (BulletErase)
+			continue;
+
+		++iterBullet;
 	}
 }

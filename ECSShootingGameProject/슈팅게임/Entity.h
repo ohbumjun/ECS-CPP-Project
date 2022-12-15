@@ -18,7 +18,7 @@ public:
 	};
 
 	template<typename T>
-	inline void addComponent(T* comp)
+	inline void addComponent()
 	{
 		mask[getComponentTypeID<T>()] = true;
 	}

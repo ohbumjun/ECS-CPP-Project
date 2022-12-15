@@ -4,7 +4,8 @@
 
 void EnemyDrawSystem::updateComponents(float delta)
 {
-	std::vector<std::vector<char>>& BG = m_ECS->GetBG();
+	// std::vector<std::vector<char>>& BG = m_ECS->GetBG();
+	char** BG = m_ECS->GetBG();
 
 	const std::list<EntityID>& EnemyEntities = m_ECS->GetEnemyEntities();
 

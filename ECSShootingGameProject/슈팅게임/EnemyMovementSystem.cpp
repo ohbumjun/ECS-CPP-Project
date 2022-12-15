@@ -16,7 +16,7 @@ void EnemyMovementSystem::updateComponents(float delta)
 		Transform->IncPosX(-1);
 
 		// ÆÄ±«ÇÏ±â
-		if (Transform->GetPosX() < 1)
+		if (Transform->GetPosX() < 2)
 		{
 			m_ECS->DestroyEntity(*iter, EntityType::Enemy);
 
