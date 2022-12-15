@@ -6,6 +6,10 @@
 class Entity
 {
 	friend class Scene;
+private:
+	EntityID id;
+	ComponentMask mask;
+
 public  :
 	Entity(EntityID pId, ComponentMask pMask)
 	{
@@ -43,8 +47,4 @@ public  :
 		// std::bitset -> bool operator[](size_t pos) const;
 		return mask[getComponentTypeID<T>()];
 	}
-
-private :
-	EntityID id;
-	ComponentMask mask;
 };

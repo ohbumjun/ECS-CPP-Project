@@ -21,12 +21,16 @@ public :
 			EntityID newID = CreateEntityId(newIdx, GetEntityVersion(entities[newIdx].id));
 			entities[newIdx].id = newID;
 			return entities[newIdx].id;
+
 		}
 
 		Entity newEntity(CreateEntityId(EntityIndex(entities.size()), 0), ComponentMask());
 		entities.push_back(newEntity);
 		return entities.back().id;
 	}
+
+	// 그런데 해당 위치에 새로운 Entity가 할당되면, ComponentPool 에서 component 정보를 reset 해줘야 하는거 아닌가 ?
+
 
 	template<typename T>
 	void RemoveComponent(EntityID id)
@@ -37,6 +41,8 @@ public :
 		int componentId = getComponentTypeID<T>();
 
 		entities[GetEntityIndex(id)].mask.reset(componentId);
+
+		// componentPool 에서는 안지워주는 건가?
 	}
 
 	template<typename T, typename ...TArgs>

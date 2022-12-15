@@ -51,8 +51,6 @@ private :
 
 		Iterator& operator ++()
 		{
-			// Move iterator forwards
-			// Cautious : Interator must skip over entities in the free list
 			do
 			{
 				index++;
@@ -63,7 +61,6 @@ private :
 
 		bool ValidIndex()
 		{
-			// valid entity id (not in freelist) + correct component mask
 			return IsEntityValid(pScene->entities[index].id) && (all || mask == (pScene->entities[index].mask));
 		}
 
