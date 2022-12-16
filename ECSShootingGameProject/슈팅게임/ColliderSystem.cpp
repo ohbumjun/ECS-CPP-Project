@@ -4,38 +4,89 @@
 
 void ColliderSystem::updateComponents(float delta)
 {
+	const std::list<EntityID>& BulletConstEntities = m_ECS->GetBulletEntities();
+	const std::list<EntityID>& EnemyConstEntities  = m_ECS->GetEnemyEntities();
+
+	std::vector<std::pair<int, int>> vecEnemyPairs;
+	std::vector<std::pair<int, int>> vecBulletPairs;
+
+	{
+		auto iterBullet = BulletConstEntities.begin();
+		auto iterBulletEnd = BulletConstEntities.end();
+
+		for (; iterBullet != iterBulletEnd; ++iterBullet)
+		{
+			TransformComponent* BulletTransform = m_ECS->GetEntityComponent<TransformComponent>(*iterBullet);
+
+			int PosX = BulletTransform->GetPosX();
+			int PosY = BulletTransform->GetPosY();
+
+			vecBulletPairs.push_back(std::make_pair(PosY, PosX));
+		};
+	}
+
+	{
+		auto iterEnemy = EnemyConstEntities.begin();
+		auto iterEnemyEnd = EnemyConstEntities.end();
+
+
+		for (; iterEnemy != iterEnemyEnd; ++iterEnemy)
+		{
+			TransformComponent* EnemyTransform = m_ECS->GetEntityComponent<TransformComponent>(*iterEnemy);
+
+			int PosX = EnemyTransform->GetPosX();
+			int PosY = EnemyTransform->GetPosY();
+
+			vecEnemyPairs.push_back(std::make_pair(PosY, PosX));
+		};
+	}
+
 	std::list<EntityID>& BulletEntities = const_cast<std::list<EntityID>&>(m_ECS->GetBulletEntities());
-	std::list<EntityID>& EnemyEntities  = const_cast<std::list<EntityID>&>(m_ECS->GetEnemyEntities());
+	std::list<EntityID>& EnemyEntities = const_cast<std::list<EntityID>&>(m_ECS->GetEnemyEntities());
 
-	auto iterBullet    = BulletEntities.begin();
-	auto iterBulletEnd = BulletEntities.end();
+	auto iterBullet = BulletConstEntities.begin();
+	auto iterBulletEnd = BulletConstEntities.end();
 
-	auto iterEnemy    = EnemyEntities.begin();
-	auto iterEnemyEnd = EnemyEntities.end();
+	std::sort(vecEnemyPairs.begin(), vecEnemyPairs.end());
+	std::sort(vecBulletPairs.begin(), vecBulletPairs.end());
 
 	for (; iterBullet != iterBulletEnd;)
 	{
 		bool BulletErase = false;
 		TransformComponent* BulletTransform = m_ECS->GetEntityComponent<TransformComponent>(*iterBullet);
 
+		auto iterEnemy = EnemyConstEntities.begin();
+		auto iterEnemyEnd = EnemyConstEntities.end();
+
 		for (; iterEnemy != iterEnemyEnd; ++iterEnemy)
 		{
 			TransformComponent* EnemyTransform = m_ECS->GetEntityComponent<TransformComponent>(*iterEnemy);
 
-			if (BulletTransform->GetPosY() == EnemyTransform->GetPosY())
+			int BulletPosY = BulletTransform->GetPosY();
+			int BulletPosX = BulletTransform->GetPosX();
+
+			int EnemyPosY  = EnemyTransform->GetPosY();
+			int EnemyPosX  = EnemyTransform->GetPosX();
+
+			if (BulletPosY == EnemyPosY)
 			{
-				if (BulletTransform->GetPosX() >= EnemyTransform->GetPosX() - 1 &&
-					BulletTransform->GetPosX() <= EnemyTransform->GetPosX() + 1)
+				if (BulletPosX + 1 >= EnemyPosX - 2 &&
+					BulletPosX <= EnemyPosX + 2)
 				{
 					// Bullet 제거하기 
-    					BulletErase = true;
+    				BulletErase = true;
 
 					m_ECS->DestroyEntity(*iterBullet, EntityType::Bullet);
-					m_ECS->DestroyEntity(*iterEnemy, EntityType::Enemy);
+					m_ECS->DestroyEntity(*iterEnemy,  EntityType::Enemy);
 
 					iterBullet = BulletEntities.erase(iterBullet);
 					iterEnemy  = EnemyEntities.erase(iterEnemy);
+
 					break;
+				}
+				else
+				{
+  					bool H = true;
 				}
 			}
 		}

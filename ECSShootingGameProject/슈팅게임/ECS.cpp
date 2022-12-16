@@ -162,7 +162,7 @@ EntityID ECS::CreateEnemyEntity()
 	Entity newEntity(newID, ComponentMask());
 	vecEntities.push_back(std::make_unique<Entity>(newEntity));
 	listEnemyEntities.push_back(newID);
-	AddComponent<TransformComponent>(newID);
+	// AddComponent<TransformComponent>(newID); => 별도로 추가해줄 것이다.
 	return vecEntities.back()->id;
 }
 

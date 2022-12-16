@@ -20,8 +20,8 @@ void PlayerBulletDrawSystem::updateComponents(float delta)
 		int BulletX = Transform->GetPosX();
 		int BulletY = Transform->GetPosY();
 
-		BG[BulletY][BulletX - 1] = '-';
-		BG[BulletY][BulletX + 0] = '>';
+		BG[BulletY][BulletX] = '-';
+		BG[BulletY][BulletX + 1] = '>';
 	}
 
 	// Player

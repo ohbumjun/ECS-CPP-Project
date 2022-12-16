@@ -5,6 +5,7 @@
 #include <iostream>
 #include <bitset>
 #include <vector>
+#include <algorithm>
 #include <stdio.h>
 #include <stdlib.h>
 #include <list>

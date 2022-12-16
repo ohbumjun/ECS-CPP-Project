@@ -1,12 +1,2 @@
-﻿  BulletMovementSystem.cpp
-  ColliderSystem.cpp
-  ECS.cpp
-  EnemyDrawSystem.cpp
-  EnemyMovementSystem.cpp
-  Entity.cpp
-  InputSystem.cpp
-  PlayerBulletDrawSystem.cpp
-  main.cpp
-D:\DirectXPersonalProjectFolder\ECSProject\ECSShootingGameProject\슈팅게임\main.cpp(16,12): warning C4244: '인수': 'time_t'에서 'unsigned int'(으)로 변환하면서 데이터가 손실될 수 있습니다.
-  코드를 생성하고 있습니다...
+﻿  ColliderSystem.cpp
   슈팅게임.vcxproj -> D:\DirectXPersonalProjectFolder\ECSProject\ECSShootingGameProject\Debug\슈팅게임.exe

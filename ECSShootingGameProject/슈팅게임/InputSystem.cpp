@@ -68,7 +68,7 @@ void InputSystem::updateComponents(float delta)
 
 			TransformComponent* BulletTransform = m_ECS->GetEntityComponent<TransformComponent>(BulletEntityID);
 			 
-			BulletTransform->SetPosX(PlayerTransformComp->GetPosX() + 5);
+			BulletTransform->SetPosX(PlayerTransformComp->GetPosX() + 3);
 			BulletTransform->SetPosY(PlayerTransformComp->GetPosY());
 		}
 	}
