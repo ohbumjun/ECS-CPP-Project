@@ -3,6 +3,7 @@
 #include <iostream>
 #include <time.h>
 #include "ECS.h"
+#include "ThreadPool.h"
 
 //함수설계
 void ClearScreen();         //화면을 지운다.
@@ -23,7 +24,7 @@ int main()
 	while (true)
 	{
 		int curDwTime = GetTickCount();
-		if (dwTime + 50 < curDwTime)
+		if (dwTime + 250 < curDwTime)
 		{
 			dwTime = GetTickCount();
 

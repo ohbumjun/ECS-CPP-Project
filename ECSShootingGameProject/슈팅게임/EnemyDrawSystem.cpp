@@ -25,4 +25,22 @@ void EnemyDrawSystem::updateComponents(float delta)
 		BG[EnemyY][EnemyX + 1] = '-';
 		BG[EnemyY][EnemyX + 2] = '>';
 	}
+
+	/*
+	for (long long i = 0; i < 9000000000000000; ++i)
+	{
+		for (long long j = 0; j < 9000000000000000; ++j)
+		{
+			for (long long k = 0; k < 9000000000000000; ++k)
+			{
+				for (long long a = 0; a < 9000000000000000; ++a)
+				{
+					for (long long b = 0; b < 9000000000000000; ++b)
+					{
+					}
+				}
+			}
+		}
+	}
+	*/
 }

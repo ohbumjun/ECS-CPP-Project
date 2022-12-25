@@ -9,7 +9,11 @@
 #include <stdio.h>
 #include <stdlib.h>
 #include <list>
+#include <chrono>
 #include <conio.h>
+#include <future>
+#include <queue>
+#include <assert.h>
 
 class Component;
 
@@ -29,7 +33,6 @@ enum class EntityType
 	Max
 };
 
-template<typename T>
 inline ComponentTypeID getUniqueComponentID()
 {
 	static ComponentTypeID lastID = 0;
@@ -45,7 +48,7 @@ inline ComponentTypeID getComponentTypeID() noexcept
 {
 	static_assert(std::is_base_of<Component, T>::value, "Type not base on component!");
 
-	static const ComponentTypeID typeID = getUniqueComponentID<T>();
+	static  ComponentTypeID typeID = getUniqueComponentID();
 
 	return typeID;
 }

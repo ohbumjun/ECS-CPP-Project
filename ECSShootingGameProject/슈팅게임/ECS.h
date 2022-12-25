@@ -65,13 +65,13 @@ public:
 		if (vecComponentPools.size() <= (size_t)componentId)
 		{
 			vecComponentPools.resize(componentId + 1, nullptr);
-		}
+		};
 
 		// new component, make a new pool
 		if (vecComponentPools[componentId] == nullptr)
 		{
 			vecComponentPools[componentId] = new ComponentPool(sizeof(T));
-		}
+		};
 
 		T* comp = new (vecComponentPools[componentId]->get(idx)) T(std::forward<TArgs>(args)...);
 
@@ -114,6 +114,16 @@ public:
 		return (T*)vecSystems[vecSystems.size() - 1].get();
 	}
 
+	void IncAtomicValue()
+	{
+		m_SyncNum += 1;
+	}
+
+	void UpdateSystem(int idx)
+	{
+		vecSystems[idx]->updateComponents(0.f);
+	}
+
 	/*
 	Getter
 	*/
@@ -126,11 +136,6 @@ public:
 	{
 		return m_Inst;
 	}
-
-	// std::vector<std::vector<char>>& GetBG()
-	// {
-	// 	return m_BG;
-	// }
 
 	char** GetBG()
 	{
@@ -176,5 +181,6 @@ private:
 	static ECS* m_Inst;
 	std::atomic<int> m_SyncNum;
 	float m_ThresHold = 0.f;
+	class ThreadPool* m_ThreadPool;
 };
 

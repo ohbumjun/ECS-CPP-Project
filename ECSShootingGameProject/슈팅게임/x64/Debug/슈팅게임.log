@@ -1,0 +1,60 @@
+﻿  BulletMovementSystem.cpp
+D:\DirectXPersonalProjectFolder\ECSProject\ECSShootingGameProject\슈팅게임\ECS.h(87,1): warning C4267: '초기화 중': 'size_t'에서 'int'(으)로 변환하면서 데이터가 손실될 수 있습니다.
+D:\DirectXPersonalProjectFolder\ECSProject\ECSShootingGameProject\슈팅게임\BulletMovementSystem.cpp(14): message : 컴파일되는 함수 템플릿 인스턴스화 'T *ECS::GetEntityComponent<TransformComponent>(EntityID)'에 대한 참조를 확인하세요.
+          with
+          [
+              T=TransformComponent
+          ]
+  ColliderSystem.cpp
+D:\DirectXPersonalProjectFolder\ECSProject\ECSShootingGameProject\슈팅게임\ECS.h(87,1): warning C4267: '초기화 중': 'size_t'에서 'int'(으)로 변환하면서 데이터가 손실될 수 있습니다.
+D:\DirectXPersonalProjectFolder\ECSProject\ECSShootingGameProject\슈팅게임\ColliderSystem.cpp(19): message : 컴파일되는 함수 템플릿 인스턴스화 'T *ECS::GetEntityComponent<TransformComponent>(EntityID)'에 대한 참조를 확인하세요.
+          with
+          [
+              T=TransformComponent
+          ]
+  Component.cpp
+  ComponentPool.cpp
+  ECS.cpp
+D:\DirectXPersonalProjectFolder\ECSProject\ECSShootingGameProject\슈팅게임\ECS.h(59,1): warning C4267: '초기화 중': 'size_t'에서 'int'(으)로 변환하면서 데이터가 손실될 수 있습니다.
+D:\DirectXPersonalProjectFolder\ECSProject\ECSShootingGameProject\슈팅게임\ECS.cpp(43): message : 컴파일되는 함수 템플릿 인스턴스화 'T *ECS::AddComponent<TransformComponent,int,int>(EntityID,int &&,int &&)'에 대한 참조를 확인하세요.
+          with
+          [
+              T=TransformComponent
+          ]
+  EnemyDrawSystem.cpp
+D:\DirectXPersonalProjectFolder\ECSProject\ECSShootingGameProject\슈팅게임\ECS.h(87,1): warning C4267: '초기화 중': 'size_t'에서 'int'(으)로 변환하면서 데이터가 손실될 수 있습니다.
+D:\DirectXPersonalProjectFolder\ECSProject\ECSShootingGameProject\슈팅게임\EnemyDrawSystem.cpp(17): message : 컴파일되는 함수 템플릿 인스턴스화 'T *ECS::GetEntityComponent<TransformComponent>(EntityID)'에 대한 참조를 확인하세요.
+          with
+          [
+              T=TransformComponent
+          ]
+  Entity.cpp
+  InputSystem.cpp
+D:\DirectXPersonalProjectFolder\ECSProject\ECSShootingGameProject\슈팅게임\ECS.h(87,1): warning C4267: '초기화 중': 'size_t'에서 'int'(으)로 변환하면서 데이터가 손실될 수 있습니다.
+D:\DirectXPersonalProjectFolder\ECSProject\ECSShootingGameProject\슈팅게임\InputSystem.cpp(22): message : 컴파일되는 함수 템플릿 인스턴스화 'T *ECS::GetEntityComponent<TransformComponent>(EntityID)'에 대한 참조를 확인하세요.
+          with
+          [
+              T=TransformComponent
+          ]
+  main.cpp
+D:\DirectXPersonalProjectFolder\ECSProject\ECSShootingGameProject\슈팅게임\main.cpp(17,12): warning C4244: '인수': 'time_t'에서 'unsigned int'(으)로 변환하면서 데이터가 손실될 수 있습니다.
+  EnemyMovementSystem.cpp
+D:\DirectXPersonalProjectFolder\ECSProject\ECSShootingGameProject\슈팅게임\ECS.h(87,1): warning C4267: '초기화 중': 'size_t'에서 'int'(으)로 변환하면서 데이터가 손실될 수 있습니다.
+D:\DirectXPersonalProjectFolder\ECSProject\ECSShootingGameProject\슈팅게임\EnemyMovementSystem.cpp(14): message : 컴파일되는 함수 템플릿 인스턴스화 'T *ECS::GetEntityComponent<TransformComponent>(EntityID)'에 대한 참조를 확인하세요.
+          with
+          [
+              T=TransformComponent
+          ]
+  PlayerBulletDrawSystem.cpp
+D:\DirectXPersonalProjectFolder\ECSProject\ECSShootingGameProject\슈팅게임\ECS.h(87,1): warning C4267: '초기화 중': 'size_t'에서 'int'(으)로 변환하면서 데이터가 손실될 수 있습니다.
+D:\DirectXPersonalProjectFolder\ECSProject\ECSShootingGameProject\슈팅게임\PlayerBulletDrawSystem.cpp(18): message : 컴파일되는 함수 템플릿 인스턴스화 'T *ECS::GetEntityComponent<TransformComponent>(EntityID)'에 대한 참조를 확인하세요.
+          with
+          [
+              T=TransformComponent
+          ]
+  PoolThread.cpp
+  System.cpp
+  ThreadPool.cpp
+  TransformComponent.cpp
+  코드를 생성하고 있습니다...
+  슈팅게임.vcxproj -> D:\DirectXPersonalProjectFolder\ECSProject\ECSShootingGameProject\x64\Debug\슈팅게임.exe

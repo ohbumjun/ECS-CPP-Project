@@ -31,10 +31,10 @@
     <Filter Include="소스 파일\3. System">
       <UniqueIdentifier>{4c293cf2-472d-4df1-a43e-f50a76fda2a3}</UniqueIdentifier>
     </Filter>
-    <Filter Include="헤더 파일\4. Scene">
+    <Filter Include="헤더 파일\4. Engine">
       <UniqueIdentifier>{7a754f94-5391-4cf9-b815-d2f1c20773b3}</UniqueIdentifier>
     </Filter>
-    <Filter Include="소스 파일\4. Scene">
+    <Filter Include="소스 파일\4. Engine">
       <UniqueIdentifier>{3322168d-0c19-4754-b3ff-bfa300fe11e0}</UniqueIdentifier>
     </Filter>
   </ItemGroup>
@@ -78,6 +78,12 @@
     <ClCompile Include="ColliderSystem.cpp">
       <Filter>소스 파일\3. System</Filter>
     </ClCompile>
+    <ClCompile Include="ThreadPool.cpp">
+      <Filter>소스 파일\4. Engine</Filter>
+    </ClCompile>
+    <ClCompile Include="PoolThread.cpp">
+      <Filter>소스 파일\4. Engine</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="Flag.h">
@@ -118,6 +124,12 @@
     </ClInclude>
     <ClInclude Include="ColliderSystem.h">
       <Filter>헤더 파일\3. System</Filter>
+    </ClInclude>
+    <ClInclude Include="ThreadPool.h">
+      <Filter>헤더 파일\4. Engine</Filter>
+    </ClInclude>
+    <ClInclude Include="PoolThread.h">
+      <Filter>헤더 파일</Filter>
     </ClInclude>
   </ItemGroup>
 </Project>
